@@ -64,7 +64,7 @@ class LinkedList
 
   def insert(key, val)
     if include?(key)
-      get(key).val = val
+      each { |link| link.val = val if link.key == key }
     else
       link = Link.new(key, val)
 
