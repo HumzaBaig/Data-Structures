@@ -25,6 +25,9 @@ class LRUCache
 
   def calc!(key)
     # suggested helper method; insert an (un-cached) key
+    @store.insert(key, @prc.call(key))
+
+    @map.set(key, #point to link)
   end
 
   def update_link!(link)
